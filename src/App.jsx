@@ -5,6 +5,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import RestrictedRoute from "./routes/RestrictedRoute";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
+import NotFound from "./pages/NotFound/NotFound";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           path="/login"
           element={<RestrictedRoute component={<SignIn />} />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
