@@ -1,5 +1,6 @@
 import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 import s from "./Home.module.css";
+// import imageSrc from "../../images/Victory-back.jpg";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
             military. Thank you for dining with us and contributing to a noble
             cause!
           </p>
+          <div className={s.backgroundPhoto1}></div>
         </div>
       </div>
     </>
