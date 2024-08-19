@@ -1,0 +1,7 @@
+.mainDiv {
+  max-width: 70%;
+}
+.upSide {
+  display: flex;
+  flex-direction: row;
+}
