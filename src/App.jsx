@@ -6,21 +6,24 @@ import RestrictedRoute from "./routes/RestrictedRoute";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 import NotFound from "./pages/NotFound/NotFound";
+import Hello from "./pages/Hello/Hello";
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" index element={<Home />} />
+        <Route path="/" index element={<Hello />} />
+
+        <Route path="/home" element={<Home />} />
 
         <Route path="/order" element={<PrivateRoute component={<Order />} />} />
         <Route
-          path="/register"
+          path="/signup"
           element={<RestrictedRoute component={<SignUp />} />}
         />
 
         <Route
-          path="/login"
+          path="/signin"
           element={<RestrictedRoute component={<SignIn />} />}
         />
         <Route path="*" element={<NotFound />} />

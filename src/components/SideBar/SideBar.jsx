@@ -1,7 +1,8 @@
 import { useState } from "react";
 import s from "./Sidebar.module.css";
 import clsx from "clsx";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import Burger from "../Burger/Burger";
+import { Link } from "react-router-dom";
 const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -10,7 +11,7 @@ const SideBar = () => {
   };
   return (
     <>
-      <BurgerMenu toggleSidebar={toggleSidebar} />
+      <Burger toggleSidebar={toggleSidebar} />
       <div className={clsx(s.sidebar, isSidebarOpen ? s.active : "")}>
         <ul>
           <li>
@@ -20,12 +21,21 @@ const SideBar = () => {
             <a href="#">About</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#">Order</a>
           </li>
           <li>
             <a href="#">Contact</a>
           </li>
         </ul>
+        <ul></ul>
+        <li>
+          {" "}
+          <Link to="/signin">SignIn</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/signup">SignUp</Link>
+        </li>
       </div>
     </>
   );

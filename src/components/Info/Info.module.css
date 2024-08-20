@@ -3,10 +3,10 @@
 }
 
 .backgroundPhoto1 {
-  width: 500px;
+  width: 900px;
   overflow: hidden;
-  height: 300px;
-  background-image: url("../../images/Victory-back.jpg");
+  height: 500px;
+  background-image: url("../../images/Ukraine.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,0 +1,67 @@
+/* Контейнер для зображень */
+.container {
+  display: flex;
+  width: 100%;
+  overflow: hidden; /* Приховуємо все, що виходить за межі контейнера */
+}
+
+/* Загальні стилі для зображень */
+.image {
+  position: relative;
+  width: 50%; /* Кожне зображення займає половину ширини контейнера */
+  height: 300px; /* Висота зображення */
+  background-size: cover; /* Зображення покриває всю область блоку */
+  background-position: center; /* Центруємо зображення */
+  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out; /* Додаємо плавний ефект переходу */
+  height: 500px;
+}
+
+/* Фонове зображення для першого блоку */
+.image1 {
+  background-image: url("../../images/Chicago.jpg"); /* Шлях до першого зображення */
+}
+
+/* Фонове зображення для другого блоку */
+.image2 {
+  background-image: url("../../images/Berlin.jpg"); /* Шлях до другого зображення */
+}
+
+/* Ефект ховера на першому зображенні */
+.image1:hover {
+  width: 60%;
+}
+
+/* Ефект ховера на другому зображенні */
+.image2:hover {
+  width: 60%; /* Збільшуємо ширину другого зображення */
+}
+
+/* Зменшуємо ширину першого зображення, коли друге зображення розширене */
+.image2:hover ~ .image1 {
+  width: 40%;
+}
+.image1:hover ~ .image2 {
+  width: 40%;
+}
+
+.imageLink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.imageLink:hover {
+  background-color: rgba(30, 112, 67, 0.7);
+}
+
+.image:hover .imageLink {
+  opacity: 1;
+  pointer-events: auto;
+}

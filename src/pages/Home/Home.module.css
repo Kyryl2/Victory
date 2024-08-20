@@ -1,16 +1,4 @@
-.mainDiv {
-  max-width: 70%;
-}
 .upSide {
   display: flex;
   flex-direction: row;
-}
-.backgroundPhoto1 {
-  width: 500px; /* Обмеження розміру контейнера */
-  overflow: hidden;
-  height: 300px;
-  background-image: url("../../images/Victory-back.jpg");
-  background-size: cover; /* Покриває весь елемент */
-  background-position: center; /* Центрує зображення */
-  background-repeat: no-repeat;
 }

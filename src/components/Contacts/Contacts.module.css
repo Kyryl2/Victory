@@ -1,0 +1,18 @@
+.div {
+  padding: 10px;
+  background-image: url("../../images/contacts.jpg");
+  height: 300px;
+}
+.p {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: black;
+  transition: transform 0.5s ease;
+}
+.p:hover {
+  text-align: center;
+  color: rgb(245, 241, 241);
+
+  transform: translateY(20px);
+}
