@@ -1,0 +1,36 @@
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Початкова позиція сайдбару за межами екрану */
+  background-color: #111;
+  overflow-x: hidden;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+.sidebar ul li a {
+  color: #818181;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  color: #f1f1f1;
+}
+
+/* Стилі для активного сайдбару */
+.sidebar.active {
+  left: 0;
+}

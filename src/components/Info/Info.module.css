@@ -1,0 +1,13 @@
+.mainDiv {
+  max-width: 70%;
+}
+
+.backgroundPhoto1 {
+  width: 500px;
+  overflow: hidden;
+  height: 300px;
+  background-image: url("../../images/Victory-back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
