@@ -21,12 +21,12 @@ const Hello = () => {
     <>
       <div className={s.container}>
         <div className={clsx(s.image, s.image1)}>
-          <Link to="/home" className={s.imageLink}>
+          <Link to="/tokyo" className={s.imageLink}>
             Tokyo
           </Link>
         </div>
         <div className={clsx(s.image, s.image2)}>
-          <Link to="/home" className={s.imageLink}>
+          <Link to="/napoli" className={s.imageLink}>
             Napoli
           </Link>
         </div>
