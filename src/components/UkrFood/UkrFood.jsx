@@ -3,7 +3,6 @@ import { selectAllUkrFood } from "../../redux/products/selectors";
 import s from "./UkrFood.module.css";
 const UkrFood = () => {
   const ukrfood = useSelector(selectAllUkrFood);
-  console.log(ukrfood);
 
   return (
     <div>

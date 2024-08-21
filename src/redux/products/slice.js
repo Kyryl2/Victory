@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUkrFood } from "./operations";
+import { getPizzas, getSushi, getUkrFood } from "./operations";
 
 const ukrFoodSlice = createSlice({
   name: "ukrFood",
   initialState: {
-    items: [],
+    ukrFood: [],
+    pizzas: [],
+    sushi: [],
     status: "idle",
     error: null,
   },
@@ -15,11 +17,35 @@ const ukrFoodSlice = createSlice({
         state.status = "loading";
         state.error = null;
       })
+      .addCase(getPizzas.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getSushi.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
       .addCase(getUkrFood.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload;
+        state.ukrFood = action.payload;
+      })
+      .addCase(getPizzas.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.pizzas = action.payload;
+      })
+      .addCase(getSushi.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.sushi = action.payload;
       })
       .addCase(getUkrFood.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+      .addCase(getPizzas.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+      .addCase(getSushi.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
       });

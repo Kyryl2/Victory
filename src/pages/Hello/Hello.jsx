@@ -2,7 +2,21 @@ import clsx from "clsx";
 import s from "./Hello.module.css";
 import { Link } from "react-router-dom";
 import Contacts from "../../components/Contacts/Contacts";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  getPizzas,
+  getSushi,
+  getUkrFood,
+} from "../../redux/products/operations";
 const Hello = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUkrFood());
+    dispatch(getPizzas());
+    dispatch(getSushi());
+  }, [dispatch]);
   return (
     <>
       <div className={s.container}>

@@ -1,0 +1,28 @@
+.imageList {
+  list-style: none; /* Прибирає маркери списку */
+  padding: 0;
+  display: flex;
+  gap: 10px; /* Проміжок між елементами списку */
+  flex-wrap: wrap;
+}
+
+.li {
+  flex: 1; /* Кожен елемент списку займає рівну ширину */
+  max-width: 300px;
+}
+.photoBox {
+  width: 300px; /* Контейнер займає всю ширину елементу списку */
+  height: 300px;
+  padding-top: 75%; /* Співвідношення сторін 4:3 (можна змінити під свої потреби) */
+  position: relative;
+  overflow: hidden; /* Приховує частини зображення, які виходять за межі контейнера */
+}
+.img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Масштабує зображення з збереженням пропорцій */
+  transform: translate(-50%, -50%); /* Вирівнює по центру */
+}
