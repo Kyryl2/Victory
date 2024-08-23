@@ -4,6 +4,7 @@
   display: flex;
   gap: 10px; /* Проміжок між елементами списку */
   flex-wrap: wrap;
+  margin-left: 250px;
 }
 
 .li {
@@ -29,6 +30,23 @@
   height: 100%;
   object-fit: cover; /* Масштабує зображення з збереженням пропорцій */
   transform: translate(-50%, -50%); /* Вирівнює по центру */
+}
+.overlay {
+  position: absolute; /* Абсолютне позиціонування */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Прозорий фон за замовчуванням */
+  transition: background-color 0.3s ease; /* Плавна зміна фону при наведенні */
+}
+.photoBox:hover .overlay {
+  background-color: rgba(
+    170,
+    115,
+    115,
+    0.5
+  ); /* Напівпрозорий чорний фон при наведенні */
 }
 .description {
   height: 50px;

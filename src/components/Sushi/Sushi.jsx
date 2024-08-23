@@ -13,6 +13,7 @@ const Sushi = () => {
             <p>{food.price}$</p>
             <div className={s.photoBox}>
               <img src={food.img} className={s.img} />
+              <div className={s.overlay}></div>
             </div>
           </li>
         ))}

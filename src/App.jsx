@@ -12,6 +12,8 @@ import SideBar from "./components/SideBar/SideBar";
 import Sushi from "./components/Sushi/Sushi";
 import Pizza from "./components/Pizza/Pizza";
 import s from "../src/App.module.css";
+import UkrFood from "./components/UkrFood/UkrFood";
+import FixedButton from "./components/FixedButton/FixedButton";
 const App = () => {
   return (
     <>
@@ -26,6 +28,7 @@ const App = () => {
                 <SideBar />
                 <Info />
               </div>
+              <FixedButton />
               <Sushi />
             </Home>
           }
@@ -39,7 +42,21 @@ const App = () => {
                 <SideBar />
                 <Info />
               </div>
+              <FixedButton />
               <Pizza />
+            </Home>
+          }
+        />
+        <Route
+          path="/ukrfood"
+          element={
+            <Home>
+              <div className={s.wrapper}>
+                <SideBar />
+                <Info />
+              </div>
+              <FixedButton />
+              <UkrFood />
             </Home>
           }
         />

@@ -1,0 +1,23 @@
+/* FixedButton.css */
+.fixedButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.fixedButton a {
+  color: white;
+  text-decoration: none;
+}
+
+.fixedButton:hover {
+  background-color: #0056b3;
+}

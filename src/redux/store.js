@@ -20,9 +20,16 @@ const persistConfig = {
   whitelist: ["token"],
 };
 
+// Persist configuration for ukrFood
+const ukrFoodPersistConfig = {
+  key: "ukrFood",
+  version: 1,
+  storage,
+  whitelist: ["ukrFood", "pizzas", "sushi"], // Додайте ключі, які хочете зберігати
+};
 export const store = configureStore({
   reducer: {
-    ukrFood: ukrFoods,
+    ukrFood: persistReducer(ukrFoodPersistConfig, ukrFoods),
     auth: persistReducer(persistConfig, authReducer),
   },
   middleware: (getDefaultMiddleware) =>
