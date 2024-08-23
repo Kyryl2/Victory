@@ -43,14 +43,18 @@ const SideBar = () => {
         <ul></ul>
         <li>
           {" "}
-          <Link to="/signin">SignIn</Link>
+          <Link className={s.link} to="/signin">
+            SignIn
+          </Link>
         </li>
         <li>
           {" "}
-          <Link to="/signup">SignUp</Link>
+          <Link className={s.link} to="/signup">
+            SignUp
+          </Link>
         </li>
         <li>
-          <Link to="/" onClick={handleLogout}>
+          <Link className={s.link} to="/" onClick={handleLogout}>
             Logout
           </Link>
         </li>

@@ -1,0 +1,89 @@
+/* Order.module.css */
+.orderContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.itemImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.itemQuantity,
+.itemPrice {
+  margin: 5px 0;
+}
+
+.removeButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.removeButton:hover {
+  background-color: #cc0000;
+}
+
+.totalSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.total {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.checkoutButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.25rem;
+}
+
+.checkoutButton:hover {
+  background-color: #45a049;
+}
+
+.emptyCart {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #888;
+}

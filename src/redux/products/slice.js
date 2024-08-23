@@ -1,16 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getPizzas, getSushi, getUkrFood } from "./operations";
 
+const initialState = {
+  ukrFood: [],
+  pizzas: [],
+  sushi: [],
+  status: "idle",
+  error: null,
+};
+
 const ukrFoodSlice = createSlice({
   name: "ukrFood",
-  initialState: {
-    ukrFood: [],
-    pizzas: [],
-    sushi: [],
-    status: "idle",
-    error: null,
-  },
-  reducers: {},
+  initialState,
   extraReducers: (builder) => {
     builder
       .addCase(getUkrFood.pending, (state) => {
@@ -52,4 +53,4 @@ const ukrFoodSlice = createSlice({
   },
 });
 
-export const ukrFoods = ukrFoodSlice.reducer;
+export const productReducer = ukrFoodSlice.reducer;

@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { ukrFoods } from "./products/slice";
 import {
   persistStore,
   persistReducer,
@@ -10,27 +9,38 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import { authReducer } from "./auth/slice";
 import storage from "redux-persist/lib/storage";
+import { cartReducer } from "./order/slice";
+import { authReducer } from "./auth/slice";
+import { productReducer } from "./products/slice";
 
-const persistConfig = {
+// Персистор конфігурація для авторизації
+const persistConfigAuth = {
   key: "auth",
   version: 1,
   storage,
   whitelist: ["token"],
 };
 
-// Persist configuration for ukrFood
-const ukrFoodPersistConfig = {
-  key: "ukrFood",
+const persistConfigCart = {
+  key: "cart",
   version: 1,
   storage,
-  whitelist: ["ukrFood", "pizzas", "sushi"], // Додайте ключі, які хочете зберігати
 };
+
+const persistConfigProducts = {
+  key: "products",
+  version: 1,
+  storage,
+  whitelist: ["ukrFood", "pizzas", "sushi"],
+};
+
 export const store = configureStore({
   reducer: {
-    ukrFood: persistReducer(ukrFoodPersistConfig, ukrFoods),
-    auth: persistReducer(persistConfig, authReducer),
+    auth: persistReducer(persistConfigAuth, authReducer),
+
+    ukrFood: persistReducer(persistConfigProducts, productReducer),
+    cart: persistReducer(persistConfigCart, cartReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
