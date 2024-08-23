@@ -8,8 +8,8 @@ const Pizza = () => {
       <ul className={s.imageList}>
         {pizzas.map((food) => (
           <li className={s.li} key={food._id}>
-            <h3>{food.name}</h3>
-            <p>{food.description}</p>
+            <h3 className={s.name}>{food.name}</h3>
+            <p className={s.description}>{food.description}</p>
             <p>{food.price}$</p>
             <div className={s.photoBox}>
               <img src={food.img} className={s.img} />

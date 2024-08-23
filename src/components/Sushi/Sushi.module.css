@@ -9,9 +9,13 @@
 .li {
   flex: 1; /* Кожен елемент списку займає рівну ширину */
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid rgb(70, 85, 226);
 }
 .photoBox {
-  width: 300px; /* Контейнер займає всю ширину елементу списку */
+  width: 298px; /* Контейнер займає всю ширину елементу списку */
   height: 300px;
   padding-top: 75%; /* Співвідношення сторін 4:3 (можна змінити під свої потреби) */
   position: relative;
@@ -25,4 +29,10 @@
   height: 100%;
   object-fit: cover; /* Масштабує зображення з збереженням пропорцій */
   transform: translate(-50%, -50%); /* Вирівнює по центру */
+}
+.description {
+  height: 50px;
+}
+.name {
+  height: 50px;
 }
