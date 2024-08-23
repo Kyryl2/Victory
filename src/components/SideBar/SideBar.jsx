@@ -3,9 +3,16 @@ import s from "./Sidebar.module.css";
 import clsx from "clsx";
 
 import { Link } from "react-router-dom";
+import { userLogoutThunk } from "../../redux/auth/operations";
+import { useDispatch } from "react-redux";
 const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(userLogoutThunk()); // Викликаємо екшен logout
+  };
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -41,6 +48,11 @@ const SideBar = () => {
         <li>
           {" "}
           <Link to="/signup">SignUp</Link>
+        </li>
+        <li>
+          <Link to="/" onClick={handleLogout}>
+            Logout
+          </Link>
         </li>
       </div>
     </>

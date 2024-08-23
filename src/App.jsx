@@ -14,7 +14,17 @@ import Pizza from "./components/Pizza/Pizza";
 import s from "../src/App.module.css";
 import UkrFood from "./components/UkrFood/UkrFood";
 import FixedButton from "./components/FixedButton/FixedButton";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsRefreshing } from "./redux/auth/selectors";
+import { useEffect } from "react";
+import { userRefreshThunk } from "./redux/auth/operations";
 const App = () => {
+  // const isRefreshing = useSelector(selectIsRefreshing);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userRefreshThunk());
+  }, [dispatch]);
   return (
     <>
       <Routes>

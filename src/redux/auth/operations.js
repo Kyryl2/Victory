@@ -59,7 +59,9 @@ export const userRefreshThunk = createAsyncThunk(
 
       updateAuthHeader(auth.token);
 
-      const { data } = await backend.post("/refresh", { token: auth.token });
+      const { data } = await backend.post("auth/refresh", {
+        token: auth.token,
+      });
 
       return data;
     } catch (error) {
