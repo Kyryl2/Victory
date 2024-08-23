@@ -11,7 +11,7 @@ import Info from "./components/Info/Info";
 import SideBar from "./components/SideBar/SideBar";
 import Sushi from "./components/Sushi/Sushi";
 import Pizza from "./components/Pizza/Pizza";
-
+import s from "../src/App.module.css";
 const App = () => {
   return (
     <>
@@ -22,20 +22,23 @@ const App = () => {
           path="/tokyo"
           element={
             <Home>
-              <Info />
-              <SideBar />
+              <div className={s.wrapper}>
+                <SideBar />
+                <Info />
+              </div>
               <Sushi />
             </Home>
           }
         />
 
-        {/* Маршрут для Napoli */}
         <Route
           path="/napoli"
           element={
             <Home>
-              <Info />
-              <SideBar />
+              <div className={s.wrapper}>
+                <SideBar />
+                <Info />
+              </div>
               <Pizza />
             </Home>
           }

@@ -1,4 +1,4 @@
-import s from "./Contacts.module.css";
+import s from "./ContactsComponent.module.css";
 
 const Contacts = () => {
   return (

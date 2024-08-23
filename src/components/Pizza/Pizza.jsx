@@ -7,7 +7,7 @@ const Pizza = () => {
     <div>
       <ul className={s.imageList}>
         {pizzas.map((food) => (
-          <li className={s.li} key={food.id}>
+          <li className={s.li} key={food._id}>
             <h3>{food.name}</h3>
             <p>{food.description}</p>
             <p>{food.price}$</p>

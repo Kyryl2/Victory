@@ -10,18 +10,20 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import { authReducer } from "./auth/slice";
+import storage from "redux-persist/lib/storage";
 
-// const persistConfig = {
-//   key: "auth",
-//   version: 1,
-//   store,
-//   whitelist: ["token"],
-// };
+const persistConfig = {
+  key: "auth",
+  version: 1,
+  storage,
+  whitelist: ["token"],
+};
 
 export const store = configureStore({
   reducer: {
     ukrFood: ukrFoods,
-    // auth: persistReducer(persistConfig, authReducer),
+    auth: persistReducer(persistConfig, authReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -31,4 +33,4 @@ export const store = configureStore({
     }),
 });
 
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);

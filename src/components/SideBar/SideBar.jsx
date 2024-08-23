@@ -15,16 +15,16 @@ const SideBar = () => {
       <div className={clsx(s.sidebar, isSidebarOpen ? s.active : "")}>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Another city</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="#">About</Link>
           </li>
           <li>
-            <a href="#">Order</a>
+            <Link to="/order">Order</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="#">Contact</Link>
           </li>
         </ul>
         <ul></ul>

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import s from "./Hello.module.css";
 import { Link } from "react-router-dom";
-import Contacts from "../../components/Contacts/Contacts";
+import Contacts from "../../components/ContactsComponent/ContactsComponent";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
