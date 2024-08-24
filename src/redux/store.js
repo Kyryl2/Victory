@@ -26,6 +26,7 @@ const persistConfigCart = {
   key: "cart",
   version: 1,
   storage,
+  whitelist: ["items"],
 };
 
 const persistConfigProducts = {
