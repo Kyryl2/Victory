@@ -1,14 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
 import { backend } from "../../config/backend";
 
+// Санка для додавання товару до кошика
 export const addToCartThunk = createAsyncThunk(
   "cart/addToCart",
-  async ({ productId, quantity }, thunkAPI) => {
+  async ({ name, description, price, img }, thunkAPI) => {
     try {
       const response = await backend.post("orders/cart", {
-        productId,
-        quantity,
+        name,
+        description,
+        price,
+        img,
       });
       return response.data;
     } catch (error) {
@@ -19,6 +21,7 @@ export const addToCartThunk = createAsyncThunk(
   }
 );
 
+// Санка для отримання товарів з кошика
 export const fetchCartThunk = createAsyncThunk(
   "cart/fetchCart",
   async (_, thunkAPI) => {
@@ -33,6 +36,7 @@ export const fetchCartThunk = createAsyncThunk(
   }
 );
 
+// Санка для оформлення замовлення
 export const checkoutThunk = createAsyncThunk(
   "cart/checkout",
   async (_, thunkAPI) => {
@@ -47,11 +51,12 @@ export const checkoutThunk = createAsyncThunk(
   }
 );
 
+// Санка для видалення товару з кошика
 export const removeFromCartThunk = createAsyncThunk(
   "cart/removeFromCart",
-  async (productId, thunkAPI) => {
+  async (productName, thunkAPI) => {
     try {
-      const response = await backend.delete(`orders/cart/${productId}`);
+      const response = await backend.delete(`orders/cart/${productName}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
