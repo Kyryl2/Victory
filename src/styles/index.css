@@ -23,8 +23,8 @@ select:-webkit-autofill:focus {
   border: none;
 
   background: transparent;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.659);
-  caret-color: rgba(255, 255, 255, 0.659);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.659);
+  caret-color: rgba(0, 0, 0, 0.659);
   -webkit-box-shadow: transparent;
   transition: background-color 5000s ease-in-out 0s;
 }
