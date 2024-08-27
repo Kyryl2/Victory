@@ -4,13 +4,14 @@ import { backend } from "../../config/backend";
 // Санка для додавання товару до кошика
 export const addToCartThunk = createAsyncThunk(
   "cart/addToCart",
-  async ({ name, description, price, img }, thunkAPI) => {
+  async ({ name, description, price, img, quantity }, thunkAPI) => {
     try {
       const response = await backend.post("orders/cart", {
         name,
         description,
         price,
         img,
+        quantity,
       });
       return response.data;
     } catch (error) {

@@ -43,8 +43,25 @@ const cartSlice = createSlice({
       })
       .addCase(addToCartThunk.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload.products;
-        state.total = action.payload.total;
+
+        // Знайти, чи товар вже є у кошику
+        const existingItem = state.items.find(
+          (item) => item.name === action.payload.name
+        );
+
+        if (existingItem) {
+          // Якщо товар є, додати кількість до вже існуючої
+          existingItem.quantity += action.payload.quantity;
+        } else {
+          // Якщо товару немає, додати його до списку
+          state.items.push(action.payload);
+        }
+
+        // Оновити загальну суму
+        state.total = state.items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
       })
       .addCase(addToCartThunk.rejected, (state, action) => {
         state.status = "failed";
