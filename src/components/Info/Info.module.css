@@ -2,6 +2,10 @@
   max-width: 70%;
   margin-left: 250px;
 }
+.text {
+  padding-left: 20px;
+  padding-bottom: 60px;
+}
 
 .backgroundPhoto1 {
   width: 900px;

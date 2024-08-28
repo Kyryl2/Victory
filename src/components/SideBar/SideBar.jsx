@@ -29,19 +29,21 @@ const SideBar = () => {
       <div className={clsx(s.sidebar, isSidebarOpen ? s.active : "")}>
         <ul>
           <li>
-            <Link onClick={() => window.history.back()}>Back</Link>
+            <Link className={s.back} onClick={() => window.history.back()}>
+              Back
+            </Link>
           </li>
           <li>
             <Link to="/">Another city</Link>
           </li>
           <li>
-            <Link to="#">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/order">Order</Link>
           </li>
           <li>
-            <Link to="#">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
         <ul>

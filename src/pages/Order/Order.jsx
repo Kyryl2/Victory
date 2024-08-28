@@ -15,7 +15,6 @@ import {
 } from "../../redux/order/selectors";
 import QuantityInput from "../../components/QuantityInput/QuantityInput";
 import SideBar from "../../components/SideBar/SideBar";
-import FixedButton from "../../components/FixedButton/FixedButton";
 
 const Order = () => {
   const dispatch = useDispatch();

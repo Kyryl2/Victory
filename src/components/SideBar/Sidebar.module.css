@@ -62,3 +62,7 @@
 .link {
   color: #f1f1f1;
 }
+
+.back {
+  color: rgb(128, 0, 90) !important;
+}

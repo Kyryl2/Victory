@@ -3,7 +3,7 @@ import s from "./Info.module.css";
 const Info = () => {
   return (
     <div className={s.mainDiv}>
-      <p>
+      <p className={s.text}>
         Welcome to [Restaurant Victory], where the rich traditions of Ukrainian
         cuisine meet the vibrant flavors of sushi and pizza! Our menu features a
         delightful array of authentic Ukrainian dishes, crafted with love and

@@ -18,6 +18,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import { useEffect } from "react";
 import { userRefreshThunk } from "./redux/auth/operations";
+import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
 const App = () => {
   // const isRefreshing = useSelector(selectIsRefreshing);
 
@@ -73,6 +75,10 @@ const App = () => {
 
         <Route path="/order" element={<PrivateRoute component={<Order />} />} />
         <Route
+          path="/contact"
+          element={<PrivateRoute component={<Contact />} />}
+        />
+        <Route
           path="/signup"
           element={<RestrictedRoute component={<SignUp />} />}
         />
@@ -82,6 +88,7 @@ const App = () => {
           element={<RestrictedRoute component={<SignIn />} />}
         />
         <Route path="*" element={<NotFound />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );
