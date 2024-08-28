@@ -11,8 +11,25 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 1000;
+  perspective: 1000px;
 }
-
+.specialButton {
+  background: linear-gradient(to right, #005bbb, #ffd700); /* Синій і жовтий */
+  color: white;
+  animation: bounce 1s infinite; /* Безперервна анімація */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+}
+.specialButton:hover {
+  background: linear-gradient(
+    to right,
+    #003d7a,
+    #ffcc00
+  ); /* Темніший синій і жовтіший жовтий */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05) rotateY(180deg);
+  animation: bounceHover 0.5s infinite;
+}
 .fixedButton a {
   color: white;
   text-decoration: none;
@@ -20,4 +37,28 @@
 
 .fixedButton:hover {
   background-color: #0056b3;
+}
+
+/* Анімація "пригинання" */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounceHover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Більше "пригинання" */
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

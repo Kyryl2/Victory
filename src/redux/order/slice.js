@@ -4,6 +4,7 @@ import {
   checkoutThunk,
   fetchCartThunk,
   removeFromCartThunk,
+  updateCartItemThunk,
 } from "./operations";
 
 const initialState = {
@@ -15,7 +16,7 @@ const initialState = {
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState, // Використовуємо раніше визначену змінну
+  initialState,
   reducers: {
     clearCart(state) {
       state.items = [];
@@ -31,7 +32,10 @@ const cartSlice = createSlice({
       .addCase(fetchCartThunk.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items = action.payload.products;
-        state.total = action.payload.total;
+        state.total = state.items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
       })
       .addCase(fetchCartThunk.rejected, (state, action) => {
         state.status = "failed";
@@ -43,21 +47,14 @@ const cartSlice = createSlice({
       })
       .addCase(addToCartThunk.fulfilled, (state, action) => {
         state.status = "succeeded";
-
-        // Знайти, чи товар вже є у кошику
         const existingItem = state.items.find(
           (item) => item.name === action.payload.name
         );
-
         if (existingItem) {
-          // Якщо товар є, додати кількість до вже існуючої
           existingItem.quantity += action.payload.quantity;
         } else {
-          // Якщо товару немає, додати його до списку
           state.items.push(action.payload);
         }
-
-        // Оновити загальну суму
         state.total = state.items.reduce(
           (total, item) => total + item.price * item.quantity,
           0
@@ -74,9 +71,34 @@ const cartSlice = createSlice({
       .addCase(removeFromCartThunk.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items = action.payload.products;
-        state.total = action.payload.total;
+        state.total = state.items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
       })
       .addCase(removeFromCartThunk.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+      .addCase(updateCartItemThunk.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(updateCartItemThunk.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        const updatedProduct = action.payload;
+        const existingProductIndex = state.items.findIndex(
+          (item) => item.name === updatedProduct.name
+        );
+        if (existingProductIndex !== -1) {
+          state.items[existingProductIndex].quantity = updatedProduct.quantity;
+        }
+        state.total = state.items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
+      })
+      .addCase(updateCartItemThunk.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
       })

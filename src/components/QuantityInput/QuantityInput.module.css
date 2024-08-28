@@ -1,0 +1,25 @@
+.quantityContainer {
+  display: flex;
+  align-items: center;
+}
+
+.quantityButton {
+  padding: 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantityInput {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ddd;
+  height: 30px;
+  margin: 0 5px;
+}

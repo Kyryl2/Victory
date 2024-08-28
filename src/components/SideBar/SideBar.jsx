@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { userLogoutThunk } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
+
 const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -28,6 +29,9 @@ const SideBar = () => {
       <div className={clsx(s.sidebar, isSidebarOpen ? s.active : "")}>
         <ul>
           <li>
+            <Link onClick={() => window.history.back()}>Back</Link>
+          </li>
+          <li>
             <Link to="/">Another city</Link>
           </li>
           <li>
@@ -40,24 +44,25 @@ const SideBar = () => {
             <Link to="#">Contact</Link>
           </li>
         </ul>
-        <ul></ul>
-        <li>
-          {" "}
-          <Link className={s.link} to="/signin">
-            SignIn
-          </Link>
-        </li>
-        <li>
-          {" "}
-          <Link className={s.link} to="/signup">
-            SignUp
-          </Link>
-        </li>
-        <li>
-          <Link className={s.link} to="/" onClick={handleLogout}>
-            Logout
-          </Link>
-        </li>
+        <ul>
+          <li>
+            {" "}
+            <Link className={s.link} to="/signin">
+              SignIn
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link className={s.link} to="/signup">
+              SignUp
+            </Link>
+          </li>
+          <li>
+            <Link className={s.link} to="/" onClick={handleLogout}>
+              Logout
+            </Link>
+          </li>
+        </ul>
       </div>
     </>
   );

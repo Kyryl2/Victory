@@ -57,3 +57,29 @@
 .name {
   height: 50px;
 }
+
+/* Кнопка додавання до замовлення */
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.quantityInput {
+  width: 50px;
+  margin-right: 8px;
+}
+
+.addToOrderButton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addToOrderButton:hover {
+  background-color: #0056b3;
+}

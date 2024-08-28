@@ -3,6 +3,7 @@ import { selectSushi } from "../../redux/products/selectors";
 import s from "./Sushi.module.css";
 import { addToCartThunk } from "../../redux/order/operations";
 import { useState } from "react";
+import QuantityInput from "../QuantityInput/QuantityInput"; // Імпортуємо кастомний компонент
 
 const Sushi = () => {
   const sushi = useSelector(selectSushi);
@@ -24,6 +25,20 @@ const Sushi = () => {
     }));
   };
 
+  const handleIncrease = (id) => {
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [id]: prevQuantities[id] + 1,
+    }));
+  };
+
+  const handleDecrease = (id) => {
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [id]: Math.max(1, prevQuantities[id] - 1),
+    }));
+  };
+
   return (
     <div>
       <ul className={s.imageList}>
@@ -37,12 +52,11 @@ const Sushi = () => {
               <div className={s.overlay}></div>
             </div>
             <div className={s.controls}>
-              <input
-                type="number"
-                min="1"
-                value={quantities[food._id]} // Використовуємо кількість з стану
+              <QuantityInput
+                quantity={quantities[food._id]}
+                onIncrease={() => handleIncrease(food._id)}
+                onDecrease={() => handleDecrease(food._id)}
                 onChange={(e) => handleQuantityChange(food._id, e.target.value)}
-                className={s.quantityInput}
               />
               <button
                 onClick={() => {

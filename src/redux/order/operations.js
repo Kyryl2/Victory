@@ -66,3 +66,20 @@ export const removeFromCartThunk = createAsyncThunk(
     }
   }
 );
+
+export const updateCartItemThunk = createAsyncThunk(
+  "cart/updateItem",
+  async ({ name, quantity }, { rejectWithValue }) => {
+    try {
+      // Sending PATCH request to the modified endpoint
+      const response = await backend.patch("orders/cart", {
+        name, // Sending `name` in the request body
+        quantity, // Sending `quantity` in the request body
+      });
+      return response.data; // Return the updated order data
+    } catch (error) {
+      // Handle errors and reject with error response
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
