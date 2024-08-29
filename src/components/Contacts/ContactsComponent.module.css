@@ -16,6 +16,5 @@
 .p:hover {
   text-align: center;
   color: rgb(245, 241, 241);
-
   transform: translateY(20px);
 }

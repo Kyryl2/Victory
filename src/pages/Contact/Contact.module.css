@@ -1,0 +1,65 @@
+.contactContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+.contactTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.locationSection {
+  margin-bottom: 30px;
+}
+
+.locationTitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.location {
+  margin-bottom: 20px;
+}
+
+.location h4 {
+  font-size: 1.25rem;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.location p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.deliverySection {
+  margin-top: 20px;
+}
+
+.deliveryTitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.deliveryList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.deliveryList li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
