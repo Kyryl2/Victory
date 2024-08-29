@@ -12,7 +12,7 @@
   height: 300px; /* Висота зображення */
   background-size: cover; /* Зображення покриває всю область блоку */
   background-position: center; /* Центруємо зображення */
-  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out; /* Додаємо плавний ефект переходу */
+  transition: width 0.5s ease-in-out; /* Додаємо плавний ефект переходу */
   height: 500px;
 }
 
@@ -33,12 +33,12 @@
 
 /* Ефект ховера на другому зображенні */
 .image2:hover {
-  width: 60%; /* Збільшуємо ширину другого зображення */
+  width: 70%; /* Збільшуємо ширину другого зображення */
 }
 
 /* Зменшуємо ширину першого зображення, коли друге зображення розширене */
 .image2:hover ~ .image1 {
-  width: 40%;
+  width: 30%;
 }
 .image1:hover ~ .image2 {
   width: 40%;

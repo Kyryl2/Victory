@@ -1,7 +1,10 @@
 .div {
   padding: 10px;
   background-image: url("../../images/contacts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 700px;
+  margin: 0 auto;
 }
 .p {
   padding-top: 20px;
